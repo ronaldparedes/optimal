@@ -11,12 +11,6 @@
     />
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
       type="text/css"
       href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
     />
@@ -33,58 +27,55 @@
     ></script>
     <title>Optimal Physical Therapy</title>
   </head>
-  <body>
+  <body data-spy="scroll" data-target="#navbar" data-offset="66">
     <header>
       <div class="container">
-        <div class="row no-gutters justify-content-end position-relative">
-          <div class="col-3">
-            <div class="site-logo">
-              <a href="">
-                <img src="./assets/siteLogo.png" alt="site logo" />
-              </a>
-            </div>
-          </div>
-          <div class="col-6 col-md-3 order-md-7 phone-cont">
-            <a href="tel:703-470-6974" class="phone">
+        <nav
+          id="navbar"
+          class="navbar navbar-expand-md fixed-top navbar-light bg-light"
+        >
+          <a href="#" class="navbar-brand order-1">
+            <img src="./assets/siteLogo.png" alt="site logo" height="35" />
+          </a>
+          <span class="navbar-text order-2 order-md-3"
+            ><a href="tel:703-470-6974" class="phone">
               <i class="fa fa-phone fa-flip-horizontal"></i>&nbsp;(703)470-6974
-            </a>
+            </a></span
+          >
+          <button
+            class="navbar-toggler order-3"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse order-3 order-md-2 justify-content-center"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#therapists">Therapists</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+              <li class="nav-item end">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+            </ul>
           </div>
-          <div class="col-3 col-md-6 order-md-4">
-            <nav
-              class="navbar navbar-expand-md navbar-light bg-transparent justify-content-end"
-            >
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                  <li class="nav-item"><a href="" class="nav-link">Home</a></li>
-                  <li class="nav-item">
-                    <a href="" class="nav-link">Therapists</a>
-                  </li>
-                  <!-- <li class="nav-item"><a href="" class="nav-link">FAQ</a></li> -->
-                  <li class="nav-item">
-                    <a href="" class="nav-link">Contact</a>
-                  </li>
-                  <li class="nav-item end">
-                    <a href="" class="nav-link">About</a>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-        </div>
+        </nav>
       </div>
     </header>
-    <div class="carousel">
+    <div id="home" class="carousel">
       <div>
         <!-- <img src="./assets/therapy01.jpg" alt="back massage" /> -->
         <picture>
@@ -113,35 +104,110 @@
       </div>
       <div><img src="./assets/therapy03.jpg" alt="" /></div>
     </div>
-    <div class="container">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci maiores
-      nemo, dolor, qui delectus, nesciunt pariatur aliquam asperiores quasi
-      culpa architecto amet blanditiis nobis aliquid veniam quod consectetur hic
-      est?
-    </div>
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci maiores
-      nemo, dolor, qui delectus, nesciunt pariatur aliquam asperiores quasi
-      culpa architecto amet blanditiis nobis aliquid veniam quod consectetur hic
-      est?
-    </div>
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci maiores
-      nemo, dolor, qui delectus, nesciunt pariatur aliquam asperiores quasi
-      culpa architecto amet blanditiis nobis aliquid veniam quod consectetur hic
-      est?
-    </div>
-    <div>
-      <div class="mapouter">
-        <div class="gmap_canvas">
-          <iframe
-            id="gmap_canvas"
-            src="https://maps.google.com/maps?q=optimal%20physical%20therapy%20Gaithersburg&t=&z=13&ie=UTF8&iwloc=&output=embed"
-            frameborder="0"
-            scrolling="no"
-            marginheight="0"
-            marginwidth="0"
-          ></iframe>
+    <div class="body-wrap">
+      <div id="therapists">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur
+          beatae quas laboriosam, ducimus ex voluptatum, mollitia harum
+          accusamus non repellendus aspernatur dolor a dolorum quia, est earum
+          suscipit et enim!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur
+          beatae quas laboriosam, ducimus ex voluptatum, mollitia harum
+          accusamus non repellendus aspernatur dolor a dolorum quia, est earum
+          suscipit et enim!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur
+          beatae quas laboriosam, ducimus ex voluptatum, mollitia harum
+          accusamus non repellendus aspernatur dolor a dolorum quia, est earum
+          suscipit et enim!
+        </p>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur
+          beatae quas laboriosam, ducimus ex voluptatum, mollitia harum
+          accusamus non repellendus aspernatur dolor a dolorum quia, est earum
+          suscipit et enim!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur
+          beatae quas laboriosam, ducimus ex voluptatum, mollitia harum
+          accusamus non repellendus aspernatur dolor a dolorum quia, est earum
+          suscipit et enim!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur
+          beatae quas laboriosam, ducimus ex voluptatum, mollitia harum
+          accusamus non repellendus aspernatur dolor a dolorum quia, est earum
+          suscipit et enim!
+        </p>
+      </div>
+      <div id="contact">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur
+          beatae quas laboriosam, ducimus ex voluptatum, mollitia harum
+          accusamus non repellendus aspernatur dolor a dolorum quia, est earum
+          suscipit et enim!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur
+          beatae quas laboriosam, ducimus ex voluptatum, mollitia harum
+          accusamus non repellendus aspernatur dolor a dolorum quia, est earum
+          suscipit et enim!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur
+          beatae quas laboriosam, ducimus ex voluptatum, mollitia harum
+          accusamus non repellendus aspernatur dolor a dolorum quia, est earum
+          suscipit et enim!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur
+          beatae quas laboriosam, ducimus ex voluptatum, mollitia harum
+          accusamus non repellendus aspernatur dolor a dolorum quia, est earum
+          suscipit et enim!
+        </p>
+      </div>
+      <div id="about">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur
+          beatae quas laboriosam, ducimus ex voluptatum, mollitia harum
+          accusamus non repellendus aspernatur dolor a dolorum quia, est earum
+          suscipit et enim!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur
+          beatae quas laboriosam, ducimus ex voluptatum, mollitia harum
+          accusamus non repellendus aspernatur dolor a dolorum quia, est earum
+          suscipit et enim!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur
+          beatae quas laboriosam, ducimus ex voluptatum, mollitia harum
+          accusamus non repellendus aspernatur dolor a dolorum quia, est earum
+          suscipit et enim!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur
+          beatae quas laboriosam, ducimus ex voluptatum, mollitia harum
+          accusamus non repellendus aspernatur dolor a dolorum quia, est earum
+          suscipit et enim!
+        </p>
+      </div>
+      <div>
+        <div class="mapouter">
+          <div class="gmap_canvas">
+            <iframe
+              id="gmap_canvas"
+              src="https://maps.google.com/maps?q=optimal%20physical%20therapy%20Gaithersburg&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              frameborder="0"
+              scrolling="no"
+              marginheight="0"
+              marginwidth="0"
+            ></iframe>
+          </div>
         </div>
       </div>
     </div>
@@ -173,6 +239,16 @@
         </div>
       </div>
     </footer>
+    <a
+      id="back-to-top"
+      href="#"
+      class="back-to-top"
+      role="button"
+      title="Go to the top of the page"
+      data-toggle="tooltip"
+      data-placement="left"
+      ><i class="fas fa-chevron-circle-up"></i
+    ></a>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script
       type="text/javascript"
