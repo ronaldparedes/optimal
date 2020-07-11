@@ -4,11 +4,17 @@ $(document).ready(function () {
     fade: true,
     dots: true,
   });
+
+  // $("body").scrollspy({ offset: "300px" });
+
+  // SCROLL TO TOP functionality
   $(window).scroll(function () {
-    if ($(this).scrollTop() > 50) {
-      $("#back-to-top").fadeIn();
+    if ($(this).scrollTop() > 400) {
+      // $("#back-to-top").fadeIn();
+      $("#back-to-top").addClass("show");
     } else {
-      $("#back-to-top").fadeOut();
+      // $("#back-to-top").fadeOut();
+      $("#back-to-top").removeClass("show");
     }
   });
   // On Click, scroll to top
