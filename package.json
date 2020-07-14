@@ -5,9 +5,9 @@
   "main": "./src/index.js",
   "scripts": {
     "start": "parcel ./src/index.html --open",
-    "build": "parcel build index.html",
-    "predeploy": "rm -rf dist && parcel build index.html",
-    "deploy": "gh-pages -b master -d dist --remote live"
+    "build": "parcel build ./src/index.html",
+    "predeploy": "rm -rf dist && parcel build ./src/index.html --public-url /optimal",
+    "deploy": "gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
