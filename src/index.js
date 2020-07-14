@@ -1,11 +1,28 @@
+import smoothscroll from "smoothscroll-polyfill";
+smoothscroll.polyfill();
+
 $(document).ready(function () {
   $(".carousel").slick({
-    autoplay: false,
+    autoplay: true,
     fade: true,
     dots: true,
   });
 
-  // $("body").scrollspy({ offset: "300px" });
+  // ScrollSpy scroll-to functionality
+
+  $(".navbar li a").click((event) => {
+    event.preventDefault();
+    const offset = 60;
+    console.log($($(event.target).attr("href"))[0]);
+    const elemPos = $($(event.target).attr("href"))[0].getBoundingClientRect()
+      .top;
+    console.log(elemPos);
+    const offsetPos = elemPos - offset;
+    window.scrollBy({
+      top: offsetPos,
+      behavior: "smooth",
+    });
+  });
 
   // SCROLL TO TOP functionality
   $(window).scroll(function () {
@@ -29,4 +46,11 @@ $(document).ready(function () {
     return false;
   });
   $("#back-to-top").tooltip("show");
+
+  // Initialize Animate On Scroll (AOS)
+  AOS.init({
+    duration: 800,
+    once: false,
+    easing: "ease-in-out",
+  });
 });
