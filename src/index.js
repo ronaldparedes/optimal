@@ -7,8 +7,6 @@ ReactDOM.render(<ReactReviews />, domContainer);
 
 import LazyLoad from "vanilla-lazyload";
 
-const ll = new LazyLoad();
-
 // (function () {
 //   function logElementEvent(eventName, element) {
 //     console.log(Date.now(), eventName, element.getAttribute("data-src"));
@@ -169,4 +167,12 @@ $(document).ready(function () {
     once: true,
     easing: "ease-in-out",
   });
+  const ll = new LazyLoad({
+    // callback_load: function () {
+    //   AOS.refresh();
+    // },
+  });
+  document
+    .querySelectorAll("img")
+    .forEach((img) => img.addEventListener("load", () => AOS.refresh()));
 });

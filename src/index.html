@@ -235,18 +235,21 @@
             </div>
             <div class="my-5">
               <h5 class="text-center">Our Treatment Rooms</h5>
-              <picture>
-                <source
-                  media="(max-width: 768px)"
-                  data-srcset="./assets/images/room-a700@1x.jpg 700w, ./assets/images/room-a700@2x.jpg 2x"
-                />
-                <img
-                  class="info-photo lazy"
-                  data-src="./assets/images/room-a700@2x.jpg"
-                  alt=""
-                />
-              </picture>
-              <div class="row no-gutters">
+              <div data-aos="fade-right">
+                <picture>
+                  <source
+                    media="(max-width: 768px)"
+                    data-srcset="./assets/images/room-a700@1x.jpg 700w, ./assets/images/room-a700@2x.jpg 2x"
+                  />
+                  <img
+                    class="info-photo lazy"
+                    data-src="./assets/images/room-a700@2x.jpg"
+                    alt=""
+                  />
+                </picture>
+              </div>
+
+              <div class="row no-gutters" data-aos="fade-left">
                 <picture class="col-12 col-md-6">
                   <source
                     media="(max-width: 768px)"
@@ -563,21 +566,23 @@
               <div class="col-12">
                 <img src="./assets/maryland.svg" alt="" height="80" />
                 <h5 class="text-center">GAITHERSBURG, Maryland</h5>
-                <picture>
-                  <source
-                    media="(max-width: 768px)"
-                    data-srcset="./assets/images/storefront400@1x.jpg 400w, ./assets/images/storefront400@2x.jpg 2x"
-                  />
-                  <source
-                    media="(min-width: 769px)"
-                    data-srcset="./assets/images/storefront920@1x.jpg 920w, ./assets/images/storefront920@2x.jpg 2x"
-                  />
-                  <img
-                    class="storefront lazy"
-                    data-src="./assets/images/storefront.jpg"
-                    alt="storefront"
-                  />
-                </picture>
+                <div data-aos="fade-left">
+                  <picture>
+                    <source
+                      media="(max-width: 768px)"
+                      data-srcset="./assets/images/storefront400@1x.jpg 400w, ./assets/images/storefront400@2x.jpg 2x"
+                    />
+                    <source
+                      media="(min-width: 769px)"
+                      data-srcset="./assets/images/storefront920@1x.jpg 920w, ./assets/images/storefront920@2x.jpg 2x"
+                    />
+                    <img
+                      class="storefront lazy"
+                      data-src="./assets/images/storefront.jpg"
+                      alt="storefront"
+                    />
+                  </picture>
+                </div>
               </div>
 
               <div
