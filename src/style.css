@@ -370,8 +370,14 @@ video {
   right: -40px;
 }
 .carousel-action .slick-dots {
-  bottom: -30px;
+  bottom: -60px;
 }
+@media (min-width: 768px) {
+  .carousel-action .slick-dots {
+    bottom: -40px;
+  }
+}
+
 .carousel-action .slick-dots li button {
   width: 12px;
   height: 12px;
@@ -429,6 +435,7 @@ video {
   transform: scale(1.1);
   box-shadow: 0 0 4px 1px #14b8ca66;
 }
+
 section {
   padding-top: 40px;
   padding-bottom: 40px;
@@ -768,4 +775,14 @@ footer {
 .rv--content::-webkit-scrollbar-track {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.modal-title {
+  color: #1292a0;
+}
+.modal-footer .btn {
+  background-color: #1292a0;
+}
+.modal-footer .btn:hover {
+  background-color: #14b8ca;
 }

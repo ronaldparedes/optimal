@@ -175,4 +175,6 @@ $(document).ready(function () {
   document
     .querySelectorAll("img")
     .forEach((img) => img.addEventListener("load", () => AOS.refresh()));
+
+  $("#noticeModal").modal();
 });
