@@ -96,7 +96,7 @@ $(document).ready(function () {
   };
   /* Carousel Setting */
   $(".carousel").slick({
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 4000,
     fade: true,
     dots: true,
@@ -177,4 +177,7 @@ $(document).ready(function () {
     .forEach((img) => img.addEventListener("load", () => AOS.refresh()));
 
   $("#noticeModal").modal();
+  $("#noticeModal").on("hidden.bs.modal", (e) => {
+    $(".carousel").slick("slickPlay");
+  });
 });

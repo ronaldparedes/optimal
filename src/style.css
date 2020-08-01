@@ -5,6 +5,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "tagalog";
+  src: url("./assets/fonts/TagalogStylized.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 a:hover,
 a:visited,
 a:link,
@@ -357,7 +363,10 @@ video {
 .ul-list h4 a:hover {
   color: #14b8ca;
 }
-
+.insurance-note {
+  font-size: 12px;
+  color: #757575;
+}
 .carousel-action {
   margin: 50px 0;
   border-left: 1px solid #14b8ca;
@@ -462,6 +471,9 @@ section .section-icon {
 .languages span {
   font-variant: all-petite-caps;
   /* font-size: 1.2em; */
+}
+.lang-tagalog {
+  font-family: "tagalog";
 }
 
 .info-photo {
