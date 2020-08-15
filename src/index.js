@@ -1,9 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import ReactReviews from "./components/Reviews";
+import GoogleReviews from "./components/GoogleReviews";
 import smoothscroll from "smoothscroll-polyfill";
 const domContainer = document.querySelector("#react-container");
 ReactDOM.render(<ReactReviews />, domContainer);
+ReactDOM.render(
+  <GoogleReviews />,
+  document.querySelector("#google-review-container")
+);
 
 import LazyLoad from "vanilla-lazyload";
 

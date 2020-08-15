@@ -692,14 +692,16 @@ footer {
 .back-to-top.show {
   transform: translateY(0px);
 }
-
+.review-cont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 .rv--box {
   position: relative;
   padding: 20px;
   min-height: 223px;
   max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
   border: 1px solid #ededed;
   border-radius: 4px;
   background-color: #fafafa;
@@ -707,6 +709,7 @@ footer {
 }
 
 .rv-avatar {
+  object-fit: cover;
   width: 56px;
   height: 56px;
   margin-right: 10px;
@@ -721,29 +724,38 @@ footer {
   width: 108px;
   height: 20px;
 }
+.rv--google-stars {
+  background-image: url("./assets/google-stars.png");
+  width: 108px;
+  height: 20px;
+}
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .rv--stars {
     background: url("./assets/stars@2.png") no-repeat top left;
     background-size: 176px 680px;
   }
+  .rv--google-stars {
+    background: url("./assets/google-stars@2x.png") no-repeat top left;
+    background-size: 176px 680px;
+  }
 }
-.rv--stars.rating-0 {
+.rating-0 {
   background-position: 0px -320px;
 }
-.rv--stars.rating-1 {
+.rating-1 {
   background-position: 0px -360px;
 }
-.rv--stars.rating-2 {
+.rating-2 {
   background-position: 0px -400px;
 }
-.rv--stars.rating-3 {
+.rating-3 {
   background-position: 0px -440px;
 }
-.rv--stars.rating-4 {
+.rating-4 {
   background-position: 0px -480px;
 }
-.rv--stars.rating-5 {
+.rating-5 {
   background-position: 0px -500px;
 }
 .rv--badge {
