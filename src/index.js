@@ -60,6 +60,38 @@ const heroLarge = require("./assets/hero/hero-960.mp4");
 const heroXL = require("./assets/hero/hero-1260.mp4");
 
 $(document).ready(function () {
+  function weStandWithUkraine() {
+    const el = document.createElement("div");
+    el.title = "We stand with Ukraine";
+    el.style.position = "fixed";
+    el.style.left = "-85px";
+    el.style.bottom = "15px";
+    el.style.width = "300px";
+    el.style.height = "84px";
+    el.style.transform = "rotate(45deg)";
+    el.style.zIndex = "999";
+    el.style.background = "linear-gradient(-180deg, #005BBB 50%, #FFD500 50%)";
+    el.style.textAlign = "center";
+    el.style.opacity = "0.9";
+    el.style.fontSize = "1.05rem";
+    el.style.fontFamily = "salsa";
+    el.style.textShadow = "0px 1px 1px rgb(0 0 0 / 50%)";
+    el.style.boxShadow = "0px 1px 3px rgb(0 0 0 / 60%)";
+    document.body.appendChild(el);
+    const sp = document.createElement("span");
+    const sp2 = document.createElement("span");
+    sp.style.marginTop = "0.5rem";
+    sp.textContent = "We Stand With";
+    sp.style.display = "inline-block";
+    sp.style.color = "#FFD500";
+    el.appendChild(sp);
+    sp2.style.display = "block";
+    sp2.style.marginTop = "0.9rem";
+    sp2.textContent = "UKRAINE";
+    sp2.style.color = "#005BBB";
+    el.appendChild(sp2);
+  }
+  weStandWithUkraine();
   /* Hero Video Resolution */
   const heroVideo = $("#hero-video")[0];
   let windowWidth = $(window).width();
