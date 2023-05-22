@@ -7,7 +7,7 @@ import star from "../assets/star.svg";
 
 const Review = (props) => {
   let dateFormatted;
-  if (props.time) {
+  if (props.time && !props.isGoogle) {
     const date = new Date(props.time.replace(/-/g, "/"));
     dateFormatted = `${
       date.getMonth() + 1

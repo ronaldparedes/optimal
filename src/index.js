@@ -12,48 +12,6 @@ ReactDOM.render(
 
 import LazyLoad from "vanilla-lazyload";
 
-// (function () {
-//   function logElementEvent(eventName, element) {
-//     console.log(Date.now(), eventName, element.getAttribute("data-src"));
-//   }
-
-//   var callback_enter = function (element) {
-//     logElementEvent("🔑 ENTERED", element);
-//   };
-//   var callback_exit = function (element) {
-//     logElementEvent("🚪 EXITED", element);
-//   };
-//   var callback_loading = function (element) {
-//     logElementEvent("⌚ LOADING", element);
-//   };
-//   var callback_loaded = function (element) {
-//     logElementEvent("👍 LOADED", element);
-//   };
-//   var callback_error = function (element) {
-//     logElementEvent("💀 ERROR", element);
-//     element.src = "https://via.placeholder.com/440x560/?text=Error+Placeholder";
-//   };
-//   var callback_cancel = function (element) {
-//     logElementEvent("🔥 CANCEL", element);
-//   };
-//   var callback_finish = function () {
-//     logElementEvent("✔️ FINISHED", document.documentElement);
-//   };
-
-// const ll = new LazyLoad(
-//   {
-//   // Assign the callbacks defined above
-//   callback_enter: callback_enter,
-//   callback_exit: callback_exit,
-//   callback_cancel: callback_cancel,
-//   callback_loading: callback_loading,
-//   callback_loaded: callback_loaded,
-//   callback_error: callback_error,
-//   callback_finish: callback_finish,
-// });
-// }
-// )();
-
 smoothscroll.polyfill();
 const heroSmall = require("./assets/hero/hero-540.mp4");
 const heroLarge = require("./assets/hero/hero-960.mp4");
@@ -92,6 +50,7 @@ $(document).ready(function () {
     el.appendChild(sp2);
   }
   weStandWithUkraine();
+
   /* Hero Video Resolution */
   const heroVideo = $("#hero-video")[0];
   let windowWidth = $(window).width();
@@ -156,7 +115,7 @@ $(document).ready(function () {
     variableWidth: true,
     slidesToShow: 1,
     dots: true,
-    lazyLoad: "ondemand",
+    // lazyLoad: "ondemand",
   });
 
   /* ScrollSpy scroll-to functionality */

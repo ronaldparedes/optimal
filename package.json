@@ -20,7 +20,7 @@
     "react-dom": "^16.13.1",
     "react-loading-skeleton": "^2.1.1",
     "smoothscroll-polyfill": "^0.4.4",
-    "vanilla-lazyload": "^17.1.0"
+    "vanilla-lazyload": "^17.8.3"
   },
   "browserslist": [
     "since 2017-06"

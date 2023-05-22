@@ -2,27 +2,54 @@ import React, { useState, useEffect } from "react";
 import Review from "./ReviewCard";
 
 const ReactReviews = () => {
-  const [name, setName] = useState("");
-  const [reviews, setReviews] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [error, setError] = useState(null);
+  const [yelpReviews, setYelpReviews] = useState(null);
+  const [googleReviews, setGoogleReviews] = useState(null);
+
+  const [isYelpLoaded, setIsYelpLoaded] = useState(false);
+  const [isGoogleLoaded, setIsGoogleLoaded] = useState(false);
+
   const getReviews = () => {
-    const testBusID = "C6zSWewDs7-yaATp1Fh0BA";
     const business_id = "o9ds9z_6W2bFhAr0yA6HdA";
-    const herokuAPI_URL = `https://review-app-rp.herokuapp.com/yelp-review?business_id=${business_id}`;
+    const cyclicYelpAPI_URL = `https://reviews-app.cyclic.app/yelp-review?business_id=${business_id}`;
+
+    const cyclicGoogleAPI_URL = `https://reviews-app.cyclic.app/google-review`;
+
     $.ajax({
-      url: herokuAPI_URL,
+      url: cyclicYelpAPI_URL,
       method: "GET",
       "Content-Type": "application/json",
     }).then(
       (result) => {
-        setReviews(result);
-        setIsLoaded(true);
-        let reviewsTStamped = {
+        setYelpReviews(result);
+        setIsYelpLoaded(true);
+        let yelpReviewsTStamped = {
           timestamp: Date.now(),
-          reviews: result,
+          yelpReviews: result,
         };
-        localStorage.setItem("reviews", JSON.stringify(reviewsTStamped));
+        localStorage.setItem(
+          "yelpReviews",
+          JSON.stringify(yelpReviewsTStamped)
+        );
+      },
+      (error) => {
+        console.log("error", error);
+      }
+    );
+    $.ajax({
+      url: cyclicGoogleAPI_URL,
+      method: "GET",
+    }).then(
+      (result) => {
+        setGoogleReviews(result);
+        setIsGoogleLoaded(true);
+        let googleReviewsTStamped = {
+          timestamp: Date.now(),
+          googleReviews: result,
+        };
+        localStorage.setItem(
+          "googleReviews",
+          JSON.stringify(googleReviewsTStamped)
+        );
       },
       (error) => {
         console.log("error", error);
@@ -31,19 +58,25 @@ const ReactReviews = () => {
   };
   useEffect(() => {
     const hoursToExpire = 24;
-    const hasPrevReviews = localStorage.getItem("reviews");
+    const hasPrevReviews = localStorage.getItem("yelpReviews");
     if (hasPrevReviews) {
       console.log("Reviews found in localStorage");
-      const revFromStorage = JSON.parse(hasPrevReviews);
+      const revFromStorage = {
+        yelpReviews: localStorage.getItem("yelpReviews"),
+        googleReviews: localStorage.getItem("googleReviews"),
+      };
       const timeToExpire = hoursToExpire * (60 * 60 * 1000); // hours in milliseconds
       const timeElapsed = Date.now() - revFromStorage.timestamp;
       if (timeElapsed < timeToExpire) {
-        setReviews(revFromStorage.reviews);
-        setIsLoaded(true);
+        setYelpReviews(revFromStorage.yelpReviews);
+        setGoogleReviews(revFromStorage.googleReviews);
+        setIsYelpLoaded(true);
+        setIsGoogleLoaded(true);
         console.log("Loaded reviews from localStorage");
       } else {
         console.log("Reviews in localStorage Expired\nGetting new Reviews.");
-        localStorage.removeItem("reviews");
+        localStorage.removeItem("yelpReviews");
+        localStorage.removeItem("googleReviews");
         getReviews();
       }
     } else {
@@ -51,24 +84,45 @@ const ReactReviews = () => {
       getReviews();
     }
   }, []);
-  return isLoaded
-    ? reviews.map((review, index) => {
-        return (
+
+  const reviewArr = [];
+
+  if (isYelpLoaded && isGoogleLoaded) {
+    yelpReviews.forEach((review, index) => {
+      reviewArr.push(
+        <Review
+          key={index}
+          name={review.user.name}
+          avatar={review.user.image_url}
+          time={review.time_created}
+          text={review.text}
+          rating={review.rating}
+        />
+      );
+    });
+    if (googleReviews) {
+      googleReviews.forEach((review, index) => {
+        reviewArr.push(
           <Review
-            key={index}
-            name={review.user.name}
-            avatar={review.user.image_url}
-            time={review.time_created}
+            key={index + review.author_name}
+            name={review.author_name}
+            avatar={review.profile_photo_url}
+            time={review.relative_time_description}
             text={review.text}
             rating={review.rating}
+            isGoogle
           />
         );
-      })
-    : Array(3)
-        .fill()
-        .map((review, index) => {
-          return <Review key={index}></Review>;
-        });
+      });
+    }
+  } else {
+    Array(3)
+      .fill()
+      .forEach((review, index) => {
+        reviewArr.push(<Review key={index}></Review>);
+      });
+  }
+  return reviewArr;
 };
 
 export default ReactReviews;
