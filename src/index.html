@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=UA-174180581-1"
@@ -13,6 +13,16 @@
       }
       gtag("js", new Date());
       gtag("config", "UA-174180581-1");
+    </script>
+    -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KR8L79EFGD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-KR8L79EFGD');
     </script>
 
     <meta charset="UTF-8" />
@@ -614,7 +624,7 @@
             <div class="row contact-info">
               <div class="col-12">
                 <img src="./assets/maryland.svg" alt="" height="80" />
-                <h5 class="text-center">GAITHERSBURG, Maryland</h5>
+                <h5 class="text-center">ROCKVILLE, Maryland</h5>
                 <div data-aos="fade-left">
                   <picture>
                     <source
@@ -664,8 +674,8 @@
                       &nbsp;Address:
                     </strong>
                     <span
-                      >2 Metropolitan Court Suite J<br />Gaithersburg, MD
-                      20878</span
+                      >15245 Shady Grove Rd <br/>Suite 340 North Entrance<br />Rockville, MD
+                      20850</span
                     ></a
                   >
                 </p>
@@ -793,7 +803,21 @@
       </section>
       <div class="col mapouter" id="map" data-aos="fade-up">
         <div class="gmap_canvas">
-          <iframe
+          <iframe 
+            id="gmap_canvas"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5149.898148915976!2d-77.191074300065!3d39.10785778452817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7d2a9e3fd7f1f%3A0xa6397c5bc781bd64!2s15245%20Shady%20Grove%20Rd%20%23340%2C%20Rockville%2C%20MD%2020850!5e0!3m2!1sen!2sus!4v1694397325673!5m2!1sen!2sus" 
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+      <!--
+      <iframe
             title="Map with Optimal Physical Therapy located"
             id="gmap_canvas"
             src="https://maps.google.com/maps?q=optimal%20physical%20therapy%20Gaithersburg&t=&z=13&ie=UTF8&iwloc=&output=embed"
@@ -801,9 +825,8 @@
             scrolling="no"
             marginheight="0"
             marginwidth="0"
-          ></iframe>
-        </div>
-      </div>
+            style="display:none;" 
+      ></iframe> -->
     </div>
     <footer>
       <div class="container">
