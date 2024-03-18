@@ -172,8 +172,9 @@ $(document).ready(function () {
     .querySelectorAll("img")
     .forEach((img) => img.addEventListener("load", () => AOS.refresh()));
 
-  $("#noticeModal").modal();
-  $("#noticeModal").on("hidden.bs.modal", (e) => {
-    $(".carousel").slick("slickPlay");
-  });
+  /* Corona Virus Notice Modal Disabled */
+  // $("#noticeModal").modal();
+  // $("#noticeModal").on("hidden.bs.modal", (e) => {
+  //   $(".carousel").slick("slickPlay");
+  // });
 });
